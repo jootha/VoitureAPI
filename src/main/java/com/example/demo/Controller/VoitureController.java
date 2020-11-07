@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Optional;
 
 @Controller
 public class VoitureController {
@@ -14,10 +13,14 @@ public class VoitureController {
     @Autowired
     private VoitureRepository voitureRepository;
 
-
     @ResponseBody
-    @RequestMapping("/voitures")
+    @RequestMapping("/voitures/all")
     public Iterable <Voiture> getVoitures(){
         return voitureRepository.findAll();
+    }
+    @ResponseBody
+    @RequestMapping("/voitures/{voitureId}")
+    public String getVoitureById(@PathVariable("voitureId") int voitureId){
+        return voitureRepository.findById(voitureId).toString();
     }
 }

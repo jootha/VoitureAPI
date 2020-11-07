@@ -4,8 +4,7 @@ import com.example.demo.Entity.Marque;
 import com.example.demo.Repository.MarqueRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class MarqueController {
@@ -14,8 +13,14 @@ public class MarqueController {
     private MarqueRepository marqueRepository;
 
     @ResponseBody
-    @RequestMapping("/marques")
+    @RequestMapping("/marques/all")
     public Iterable <Marque> getMarques(){
         return marqueRepository.findAll();
+    }
+
+    @ResponseBody
+    @RequestMapping("/marques/{marqueId}")
+    public Marque getMarqueById(@PathVariable("marqueId") int marqueId){
+        return marqueRepository.findById(marqueId);
     }
 }

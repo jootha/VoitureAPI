@@ -9,7 +9,6 @@ import java.util.Set;
 @Entity
 @Data
 @NoArgsConstructor
-@Table(name= "MARQUE")
 public class Marque {
     @Id
     @GeneratedValue
@@ -20,7 +19,7 @@ public class Marque {
     private String name;
 
     @OneToMany
-    @JoinColumn(name = "marque_id")
+    @JoinColumn(name = "marque_m_id")
     private Set<Voiture> voitures;
 
     public Marque(String name) {
@@ -33,5 +32,16 @@ public class Marque {
 
     public String getName() {
         return name;
+    }
+
+    @Override
+    public String toString() {
+        String res ="Marque{" +
+                "id=" + id +
+                ", name='" + name + '\'';
+                for(Voiture v:voitures)
+                res = ", voitures=" + v.toString() +
+                '}';
+        return res;
     }
 }
