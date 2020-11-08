@@ -14,5 +14,4 @@ public interface VoitureRepository extends JpaRepository<Voiture, Integer> {
     public Iterable<Voiture> findAllByName(String name);
     public Iterable<Voiture> findAllByMarque(Marque marque);
     public Iterable<Voiture> findAllByClient(Client client);
-
 }

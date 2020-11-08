@@ -49,4 +49,5 @@ public class VoitureController {
     public Iterable<Voiture> getVoituresByIClientId(@PathVariable("clientId") int clientId){
         return voitureRepository.findAllByClient(clientRepository.findById(clientId));
     }
+
 }

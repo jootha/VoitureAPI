@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -19,6 +20,14 @@ public class Marque {
 
     @Column(name = "m_name", length = 64, nullable = false, unique=true)
     private String name;
+
+    @ManyToMany(cascade = { CascadeType.ALL })
+    @JoinTable(
+            name = "marque_concessionaire",
+            joinColumns = { @JoinColumn(name = "m_id") },
+            inverseJoinColumns = { @JoinColumn(name = "co_id") }
+    )
+    Set<Concessionnaire> concessionnaires= new HashSet<>();
 
     public Marque(String name) {
         this.name = name;

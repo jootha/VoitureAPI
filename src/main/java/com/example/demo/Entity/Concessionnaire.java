@@ -3,10 +3,9 @@ package com.example.demo.Entity;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Data
@@ -20,11 +19,14 @@ public class Concessionnaire {
     @Column(name = "co_name", length = 64, nullable = false)
     private String name;
 
+    @ManyToMany(mappedBy = "concessionnaires")
+    private Set<Marque> marque= new HashSet<>();
+
 
     public Concessionnaire(String name) {
         this.name = name;
     }
-    public Concessionnaire(int id, String name) {
+    public Concessionnaire(int id, String name, Marque marque) {
         this.id = id;
         this.name = name;
     }
