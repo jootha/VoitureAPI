@@ -13,7 +13,7 @@ public class MarqueController {
     private MarqueRepository marqueRepository;
 
     @ResponseBody
-    @RequestMapping("/marques/all")
+    @RequestMapping("/marques")
     public Iterable <Marque> getMarques(){
         return marqueRepository.findAll();
     }

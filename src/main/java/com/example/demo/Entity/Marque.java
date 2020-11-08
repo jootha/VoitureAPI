@@ -18,9 +18,9 @@ public class Marque {
     @Column(name = "m_name", length = 64, nullable = false)
     private String name;
 
-    @OneToMany
-    @JoinColumn(name = "marque_m_id")
-    private Set<Voiture> voitures;
+    //@OneToMany
+    //@JoinColumn(name = "marque_m_id")
+    //private Set<Voiture> voitures;
 
     public Marque(String name) {
         this.name = name;
@@ -34,14 +34,4 @@ public class Marque {
         return name;
     }
 
-    @Override
-    public String toString() {
-        String res ="Marque{" +
-                "id=" + id +
-                ", name='" + name + '\'';
-                for(Voiture v:voitures)
-                res = ", voitures=" + v.toString() +
-                '}';
-        return res;
-    }
 }

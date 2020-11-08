@@ -14,13 +14,13 @@ public class VoitureController {
     private VoitureRepository voitureRepository;
 
     @ResponseBody
-    @RequestMapping("/voitures/all")
+    @RequestMapping("/voitures")
     public Iterable <Voiture> getVoitures(){
         return voitureRepository.findAll();
     }
     @ResponseBody
     @RequestMapping("/voitures/{voitureId}")
-    public String getVoitureById(@PathVariable("voitureId") int voitureId){
-        return voitureRepository.findById(voitureId).toString();
+    public Voiture getVoitureById(@PathVariable("voitureId") int voitureId){
+        return voitureRepository.findById(voitureId);
     }
 }

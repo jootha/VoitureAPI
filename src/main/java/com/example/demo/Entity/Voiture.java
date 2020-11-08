@@ -36,11 +36,4 @@ public class Voiture {
         return name;
     }
 
-    @Override
-    public String toString() {
-        return "Voiture{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", marque=" + marque.getName() +
-                '}';
-    }}
+   }
