@@ -15,4 +15,4 @@ insert into Adresse(a_addr, concessionnaire_co_id) values('8 rue de la l égalit
 
 insert into VOITURE(v_id, v_name, marque_m_id, client_cl_id) values(1,'206',2, 2);
 insert into VOITURE(v_id, v_name, marque_m_id, client_cl_id) values(2,'207',2, 1);
-insert into VOITURE(v_id, v_name, marque_m_id, client_cl_id) values(3,'Twingo',2, 2);
+insert into VOITURE(v_id, v_name, marque_m_id, client_cl_id) values(3,'Twingo',1, 2);

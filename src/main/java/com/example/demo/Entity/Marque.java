@@ -1,9 +1,11 @@
 package com.example.demo.Entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -17,10 +19,6 @@ public class Marque {
 
     @Column(name = "m_name", length = 64, nullable = false)
     private String name;
-
-    //@OneToMany
-    //@JoinColumn(name = "marque_m_id")
-    //private Set<Voiture> voitures;
 
     public Marque(String name) {
         this.name = name;
