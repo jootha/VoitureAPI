@@ -10,7 +10,7 @@ import java.util.List;
 @Repository
 public interface ClientRepository extends JpaRepository<Client, Integer> {
     public Client findById(int id);
-    public List<Client> findByNameLike(String name);
+    public List<Client> findByName(String name);
 
 
 }

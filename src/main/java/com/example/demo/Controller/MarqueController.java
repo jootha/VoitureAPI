@@ -19,8 +19,14 @@ public class MarqueController {
     }
 
     @ResponseBody
-    @RequestMapping("/marques/{marqueId}")
+    @RequestMapping("/marques/id/{marqueId}")
     public Marque getMarqueById(@PathVariable("marqueId") int marqueId){
         return marqueRepository.findById(marqueId);
+    }
+
+    @ResponseBody
+    @RequestMapping("/marques/name/{marqueName}")//affiche les marque selon le nom
+    public Marque getMarqueByName(@PathVariable("marqueName") String marqueName){
+        return marqueRepository.findMarqueByName(marqueName);
     }
 }

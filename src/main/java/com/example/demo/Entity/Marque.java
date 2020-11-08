@@ -17,7 +17,7 @@ public class Marque {
     @Column(name = "m_id")
     private int id;
 
-    @Column(name = "m_name", length = 64, nullable = false)
+    @Column(name = "m_name", length = 64, nullable = false, unique=true)
     private String name;
 
     public Marque(String name) {

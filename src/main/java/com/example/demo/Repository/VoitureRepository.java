@@ -11,7 +11,8 @@ import java.util.List;
 @Repository
 public interface VoitureRepository extends JpaRepository<Voiture, Integer> {
     public Voiture findById(int id);
-    public Iterable<Voiture>  findAllByMarque(Marque marque);
-    public Iterable<Voiture>  findAllByClient(Client client);
+    public Iterable<Voiture> findAllByName(String name);
+    public Iterable<Voiture> findAllByMarque(Marque marque);
+    public Iterable<Voiture> findAllByClient(Client client);
 
 }

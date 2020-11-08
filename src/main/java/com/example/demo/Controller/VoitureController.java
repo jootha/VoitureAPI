@@ -29,20 +29,24 @@ public class VoitureController {
     }
 
     @ResponseBody
-    @RequestMapping("/voitures/{voitureId}")//affiche la voiture selon son Id
+    @RequestMapping("/voitures/id/{voitureId}")//affiche la voiture selon son Id
     public Voiture getVoitureById(@PathVariable("voitureId") int voitureId){
         return voitureRepository.findById(voitureId);
     }
-
+    @ResponseBody
+    @RequestMapping("/voitures/name/{voitureName}")//affiche les voiture selon le nom
+    public Iterable<Voiture> getVoituresByName(@PathVariable("voitureName") String voitureName){
+        return voitureRepository.findAllByName(voitureName);
+    }
     @ResponseBody
     @RequestMapping("/voitures/marque/{marque}")//affiche les voitures selon leur marques
-    public Iterable<Voiture> getVoitureByIMarque(@PathVariable("marque") String marque){
+    public Iterable<Voiture> getVoituresByIMarque(@PathVariable("marque") String marque){
         return voitureRepository.findAllByMarque(marqueRepository.findMarqueByName(marque));
     }
 
     @ResponseBody
     @RequestMapping("/voitures/client/{clientId}")//affiche les voitures selon leur client
-    public Iterable<Voiture> getVoitureByIClientId(@PathVariable("clientId") int clientId){
+    public Iterable<Voiture> getVoituresByIClientId(@PathVariable("clientId") int clientId){
         return voitureRepository.findAllByClient(clientRepository.findById(clientId));
     }
 }

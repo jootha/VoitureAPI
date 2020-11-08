@@ -7,5 +7,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ConcessionnaireRepository extends JpaRepository<Concessionnaire, Integer> {
     public Concessionnaire findById(int id);
+    public Iterable<Concessionnaire> findAllByName(String name);
 
 }

@@ -10,5 +10,5 @@ import java.util.List;
 @Repository
 public interface MarqueRepository extends JpaRepository<Marque, Integer> {
     public Marque findById(int id);
-    public Marque findMarqueByName(String Name);
+    public Marque findMarqueByName(String name);
 }

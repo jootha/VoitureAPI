@@ -21,8 +21,13 @@ public class ConcessionnaireController {
     }
 
     @ResponseBody
-    @RequestMapping("/concessionnaires/{concessionnaireId}")
+    @RequestMapping("/concessionnaires/id/{concessionnaireId}")
     public Concessionnaire getconcessionnaireById(@PathVariable("concessionnaireId") int concessionnaireId){
         return concessionnaireRepository.findById(concessionnaireId);
+    }
+    @ResponseBody
+    @RequestMapping("/concessionnaires/name/{concessionnaireName}")
+    public Iterable<Concessionnaire> getconcessionnairesByName(@PathVariable("concessionnaireName") String concessionnaireName){
+        return concessionnaireRepository.findAllByName(concessionnaireName);
     }
 }
