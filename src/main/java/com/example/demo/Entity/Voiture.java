@@ -19,17 +19,18 @@ public class Voiture {
 
     @ManyToOne
     private Marque marque;
-    //@ManyToOne
-    //private client;
+    @ManyToOne
+    private Client client;
 
     public Voiture(String name, Marque marque) {
         this.name = name;
         this.marque=marque;
     }
-    public Voiture(int id, String name, Marque marque) {
+    public Voiture(int id, String name, Marque marque, Client client) {
         this.id = id;
         this.name = name;
         this.marque=marque;
+        this.client=client;
     }
 
     public String getName() {
